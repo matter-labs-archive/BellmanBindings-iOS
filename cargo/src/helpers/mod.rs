@@ -1,3 +1,3 @@
 pub mod engines;
-pub mod string_helpers;
+pub mod types_helpers;
 pub mod circuits;

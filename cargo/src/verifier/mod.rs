@@ -1,3 +1,4 @@
+use std::str;
 use std::fs::File;
 use std::os::raw::{c_char};
 use std::error::Error;
@@ -25,11 +26,11 @@ use bellman::{
 // Just for now
 use crate::helpers::engines::*;
 use crate::helpers::circuits::*;
-use crate::helpers::string_helpers::ptr_to_string;
+use crate::helpers::types_helpers::*;
 use crate::filesystem::get_verifying_key_from_file;
 
 #[no_mangle]
-pub extern fn prove(file_with_vk: *const c_char) -> bool {
+pub extern fn prove(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> bool {
     // VK 
     let filename = match ptr_to_string(file_with_vk) {
         Err(error) => {
@@ -90,13 +91,21 @@ pub extern fn prove(file_with_vk: *const c_char) -> bool {
     };
 
     // Inputs
-    let inputs = [Fr::one()];
+    let inputs_bytes = utf8_bytes_to_rust(inputs_array, inputs_array_size);
+    let inputs_str = match str::from_utf8(inputs_bytes) {
+        Err(error) => {
+            panic!("Error: can't create proof!");
+        },
+        Ok(result) => result,
+    };
+    let inputs = Fr::from_str(inputs_str).unwrap();
+
 
     // Verification
     let result = match verify_proof(
         &pvk,
         &proof,
-        &inputs
+        &[inputs]
     ) {
         Err(error) => {
             panic!("Can't verify proof!");
