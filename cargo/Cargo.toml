@@ -1,0 +1,11 @@
+[package]
+name = "bellman_bindings"
+version = "0.1.0"
+authors = ["BaldyAsh <antongrigorjev2010@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rand = "0.4"
+bellman = { git = 'https://github.com/matter-labs/bellman', tag = "0.2.0"}
+pairing = { git = 'https://github.com/matter-labs/pairing', tag = "0.16.2" }
+sapling-crypto = { git = 'https://github.com/matter-labs/sapling-crypto', tag = "0.0.4" }
