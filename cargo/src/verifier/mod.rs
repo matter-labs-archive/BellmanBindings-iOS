@@ -46,7 +46,6 @@ pub extern fn prove(file_with_vk: *const c_char) -> bool {
     let pvk = prepare_verifying_key(&verifying_key);
 
     // Proof
-    // This should work but it does not
     let g1 = Fr::one();
     let g2 = Fr::one();
     let alpha = Fr::from_str("48577").unwrap();
