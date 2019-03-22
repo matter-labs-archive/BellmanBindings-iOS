@@ -30,7 +30,7 @@ use crate::helpers::types_helpers::*;
 use crate::filesystem::get_verifying_key_from_file;
 
 #[no_mangle]
-pub extern fn prove(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> bool {
+pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> bool {
     // VK 
     let filename = match ptr_to_string(file_with_vk) {
         Err(error) => {
