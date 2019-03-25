@@ -15,14 +15,14 @@ public class VerifyError: Error {
     }
 }
 
-public enum EngineTypes: UInt8 {
+public enum Engine: UInt8 {
     case BLS12_381 = 0
     case Bn256 = 1
 }
 
 public final class Verifier {
-    public func verifyProof(filename: String, inputs: [UInt8], engine: EngineTypes) throws -> Bool {
-        let result = verify(filename, inputs, UInt(inputs.count), engine.rawValue)
+    public func verifyProof(filename: String, inputs: [UInt8], engine: Engine) throws -> Bool {
+        let result = verify(filename, inputs, UInt(inputs.count), EngineType(rawValue: UInt32(engine.rawValue)))
         let verificationResult = result.value
         let error = String(cString: result.error!)
         free_memory(result)

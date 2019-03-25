@@ -32,7 +32,12 @@ use crate::helpers::types_helpers::*;
 use crate::filesystem::get_verifying_key_from_file;
 
 #[repr(C)]
-#[warn(non_snake_case)]
+pub enum EngineType {
+    Bls12,
+    Bn256
+}
+
+#[repr(C)]
 pub struct VerificationResult {
     value: bool,
     error: *mut c_char,
@@ -130,18 +135,17 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
 }
 
 #[no_mangle]
-pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize, engine: u8) -> VerificationResult {
-    let result: VerificationResult = match engine {
-        0 => verify_with_certain_engine::<Bls12>(file_with_vk, inputs_array, inputs_array_size),
-        1 => verify_with_certain_engine::<Bn256>(file_with_vk, inputs_array, inputs_array_size),
-        _ => {
-            return VerificationResult {
-                value: false,
-                error: CString::new("Error: wrong engine!".to_owned()).unwrap().into_raw() 
-            }
+pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize, engine: EngineType) -> VerificationResult {
+    match engine {
+        EngineType::Bls12 => {
+            println!("Bls12 curve");
+            return verify_with_certain_engine::<Bls12>(file_with_vk, inputs_array, inputs_array_size)
+        },
+        EngineType::Bn256 => { 
+            println!("Bn256 curve");
+            return verify_with_certain_engine::<Bn256>(file_with_vk, inputs_array, inputs_array_size)
         },
     };
-    result
 }
 
 #[no_mangle]
