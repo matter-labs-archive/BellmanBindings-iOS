@@ -1,6 +1,7 @@
 use std::str;
 use std::fs::File;
 use std::os::raw::{c_char};
+use std::ffi::{CString, CStr};
 use std::error::Error;
 use std::marker::PhantomData;
 use rand::{thread_rng, Rng};
@@ -29,18 +30,31 @@ use crate::helpers::circuits::*;
 use crate::helpers::types_helpers::*;
 use crate::filesystem::get_verifying_key_from_file;
 
+#[repr(C)]
+#[warn(non_snake_case)]
+pub struct VerificationResult {
+    value: bool,
+    error: *mut c_char,
+}
+
 #[no_mangle]
-pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> bool {
+pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> VerificationResult {
     // VK 
     let filename = match ptr_to_string(file_with_vk) {
         Err(error) => {
-            panic!("Error: wrong file name!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: wrong file name!".to_owned()).unwrap().into_raw() 
+            }
         },
         Ok(result) => result,
     };
     let verifying_key = match get_verifying_key_from_file::<DefaultEngine>(filename) {
         Err(error) => {
-            panic!("Error: can't get file!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: can't get file!".to_owned()).unwrap().into_raw()
+            }
         },
         Ok(result) => result,
     };
@@ -74,7 +88,10 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         tau
     ) {
         Err(error) => {
-            panic!("Error: can't generate params!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: can't generate params!".to_owned()).unwrap().into_raw() 
+            }
         },
         Ok(result) => result,
     };
@@ -85,7 +102,10 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
     };
     let proof = match create_proof(circuit, &params, r, s) {
         Err(error) => {
-            panic!("Error: can't create proof!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: can't create proof!".to_owned()).unwrap().into_raw() 
+            }
         },
         Ok(result) => result,
     };
@@ -94,7 +114,10 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
     let inputs_bytes = utf8_bytes_to_rust(inputs_array, inputs_array_size);
     let inputs_str = match str::from_utf8(inputs_bytes) {
         Err(error) => {
-            panic!("Error: can't create proof!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: wrong input string!".to_owned()).unwrap().into_raw()  
+            }
         },
         Ok(result) => result,
     };
@@ -108,11 +131,25 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         &[inputs]
     ) {
         Err(error) => {
-            panic!("Can't verify proof!");
+            return VerificationResult {
+                value: false,
+                error: CString::new("Can't verify proof!".to_owned()).unwrap().into_raw()  
+            }
         },
         Ok(result) => result,
     };
-    
-    result
+
+    VerificationResult {
+        value: result,
+        error: CString::new("".to_owned()).unwrap().into_raw()
+    }
+}
+
+#[no_mangle]
+pub extern fn free_memory(verification_result: VerificationResult) {
+    unsafe {
+        if verification_result.error.is_null() { return }
+        CString::from_raw(verification_result.error)
+    };
 }
 

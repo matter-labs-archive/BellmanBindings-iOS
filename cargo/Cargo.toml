@@ -1,11 +1,18 @@
 [package]
 name = "bellman_bindings"
+description = "Bellman bindings for iOS"
 version = "0.1.0"
 authors = ["BaldyAsh <antongrigorjev2010@gmail.com>"]
 edition = "2018"
+publish = false
+license = "MIT/Apache-2.0"
+repository = "https://github.com/matter-labs/BellmanBindings-iOS"
+
+[lib]
+name = "bellman_bindings"
+crate-type = ["lib", "staticlib"]
+path = "src/lib.rs"
 
 [dependencies]
 rand = "0.4"
 bellman = { git = 'https://github.com/matter-labs/bellman', tag = "0.2.0"}
-pairing = { git = 'https://github.com/matter-labs/pairing', tag = "0.16.2" }
-sapling-crypto = { git = 'https://github.com/matter-labs/sapling-crypto', tag = "0.0.4" }

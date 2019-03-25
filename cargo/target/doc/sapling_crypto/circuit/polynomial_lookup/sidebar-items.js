@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["do_the_lookup",""],["generate_powers",""]]});

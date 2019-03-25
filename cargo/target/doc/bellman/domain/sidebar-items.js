@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EvaluationDomain",""],["Point",""],["Scalar",""]],"trait":[["Group",""]]});

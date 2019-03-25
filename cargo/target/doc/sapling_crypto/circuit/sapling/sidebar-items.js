@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Output","This is an output circuit instance."],["Spend","This is an instance of the `Spend` circuit."]]});

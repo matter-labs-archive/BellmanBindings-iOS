@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AE494CF2248E41000AB2972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE494CE2248E41000AB2972 /* AppDelegate.swift */; };
+		3AE494D12248E41000AB2972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE494D02248E41000AB2972 /* ViewController.swift */; };
+		3AE494D42248E41000AB2972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE494D22248E41000AB2972 /* Main.storyboard */; };
+		3AE494D62248E41100AB2972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE494D52248E41100AB2972 /* Assets.xcassets */; };
+		3AE494D92248E41100AB2972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE494D72248E41100AB2972 /* LaunchScreen.storyboard */; };
+		3AE494E42248E41100AB2972 /* BellmanBindingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE494E32248E41100AB2972 /* BellmanBindingsTests.swift */; };
+		3AE494F02248E42C00AB2972 /* libbellman_bindings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE494EF2248E42C00AB2972 /* libbellman_bindings.a */; };
+		3AE494F22248E44300AB2972 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE494F12248E44300AB2972 /* libresolv.tbd */; };
+		3AE494F62248E52B00AB2972 /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE494F52248E52B00AB2972 /* Verifier.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AE494E02248E41100AB2972 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE494C32248E41000AB2972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AE494CA2248E41000AB2972;
+			remoteInfo = BellmanBindings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AE494CB2248E41000AB2972 /* BellmanBindings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BellmanBindings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE494CE2248E41000AB2972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AE494D02248E41000AB2972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AE494D32248E41000AB2972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AE494D52248E41100AB2972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AE494D82248E41100AB2972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AE494DA2248E41100AB2972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE494DF2248E41100AB2972 /* BellmanBindingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BellmanBindingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE494E32248E41100AB2972 /* BellmanBindingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellmanBindingsTests.swift; sourceTree = "<group>"; };
+		3AE494E52248E41100AB2972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE494EF2248E42C00AB2972 /* libbellman_bindings.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbellman_bindings.a; path = ../../cargo/target/universal/release/libbellman_bindings.a; sourceTree = "<group>"; };
+		3AE494F12248E44300AB2972 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		3AE494F32248E47F00AB2972 /* verifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = verifier.h; path = ../../../cargo/src/verifier/verifier.h; sourceTree = "<group>"; };
+		3AE494F42248E4B400AB2972 /* BellmanBindings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BellmanBindings-Bridging-Header.h"; sourceTree = "<group>"; };
+		3AE494F52248E52B00AB2972 /* Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifier.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AE494C82248E41000AB2972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE494F22248E44300AB2972 /* libresolv.tbd in Frameworks */,
+				3AE494F02248E42C00AB2972 /* libbellman_bindings.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE494DC2248E41100AB2972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AE494C22248E41000AB2972 = {
+			isa = PBXGroup;
+			children = (
+				3AE494CD2248E41000AB2972 /* BellmanBindings */,
+				3AE494E22248E41100AB2972 /* BellmanBindingsTests */,
+				3AE494CC2248E41000AB2972 /* Products */,
+				3AE494EE2248E42C00AB2972 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3AE494CC2248E41000AB2972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AE494CB2248E41000AB2972 /* BellmanBindings.app */,
+				3AE494DF2248E41100AB2972 /* BellmanBindingsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AE494CD2248E41000AB2972 /* BellmanBindings */ = {
+			isa = PBXGroup;
+			children = (
+				3AE494F32248E47F00AB2972 /* verifier.h */,
+				3AE494F42248E4B400AB2972 /* BellmanBindings-Bridging-Header.h */,
+				3AE494CE2248E41000AB2972 /* AppDelegate.swift */,
+				3AE494F52248E52B00AB2972 /* Verifier.swift */,
+				3AE494D02248E41000AB2972 /* ViewController.swift */,
+				3AE494D22248E41000AB2972 /* Main.storyboard */,
+				3AE494D52248E41100AB2972 /* Assets.xcassets */,
+				3AE494D72248E41100AB2972 /* LaunchScreen.storyboard */,
+				3AE494DA2248E41100AB2972 /* Info.plist */,
+			);
+			path = BellmanBindings;
+			sourceTree = "<group>";
+		};
+		3AE494E22248E41100AB2972 /* BellmanBindingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AE494E32248E41100AB2972 /* BellmanBindingsTests.swift */,
+				3AE494E52248E41100AB2972 /* Info.plist */,
+			);
+			path = BellmanBindingsTests;
+			sourceTree = "<group>";
+		};
+		3AE494EE2248E42C00AB2972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AE494F12248E44300AB2972 /* libresolv.tbd */,
+				3AE494EF2248E42C00AB2972 /* libbellman_bindings.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AE494CA2248E41000AB2972 /* BellmanBindings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE494E82248E41200AB2972 /* Build configuration list for PBXNativeTarget "BellmanBindings" */;
+			buildPhases = (
+				3AE494C72248E41000AB2972 /* Sources */,
+				3AE494C82248E41000AB2972 /* Frameworks */,
+				3AE494C92248E41000AB2972 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BellmanBindings;
+			productName = BellmanBindings;
+			productReference = 3AE494CB2248E41000AB2972 /* BellmanBindings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AE494DE2248E41100AB2972 /* BellmanBindingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE494EB2248E41200AB2972 /* Build configuration list for PBXNativeTarget "BellmanBindingsTests" */;
+			buildPhases = (
+				3AE494DB2248E41100AB2972 /* Sources */,
+				3AE494DC2248E41100AB2972 /* Frameworks */,
+				3AE494DD2248E41100AB2972 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AE494E12248E41100AB2972 /* PBXTargetDependency */,
+			);
+			name = BellmanBindingsTests;
+			productName = BellmanBindingsTests;
+			productReference = 3AE494DF2248E41100AB2972 /* BellmanBindingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AE494C32248E41000AB2972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = TheMatter;
+				TargetAttributes = {
+					3AE494CA2248E41000AB2972 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					3AE494DE2248E41100AB2972 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3AE494CA2248E41000AB2972;
+					};
+				};
+			};
+			buildConfigurationList = 3AE494C62248E41000AB2972 /* Build configuration list for PBXProject "BellmanBindings" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AE494C22248E41000AB2972;
+			productRefGroup = 3AE494CC2248E41000AB2972 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AE494CA2248E41000AB2972 /* BellmanBindings */,
+				3AE494DE2248E41100AB2972 /* BellmanBindingsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AE494C92248E41000AB2972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE494D92248E41100AB2972 /* LaunchScreen.storyboard in Resources */,
+				3AE494D62248E41100AB2972 /* Assets.xcassets in Resources */,
+				3AE494D42248E41000AB2972 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE494DD2248E41100AB2972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AE494C72248E41000AB2972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE494D12248E41000AB2972 /* ViewController.swift in Sources */,
+				3AE494F62248E52B00AB2972 /* Verifier.swift in Sources */,
+				3AE494CF2248E41000AB2972 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE494DB2248E41100AB2972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE494E42248E41100AB2972 /* BellmanBindingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AE494E12248E41100AB2972 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AE494CA2248E41000AB2972 /* BellmanBindings */;
+			targetProxy = 3AE494E02248E41100AB2972 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3AE494D22248E41000AB2972 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE494D32248E41000AB2972 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AE494D72248E41100AB2972 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE494D82248E41100AB2972 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AE494E62248E41200AB2972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3AE494E72248E41200AB2972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AE494E92248E41200AB2972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DB897QKJA;
+				INFOPLIST_FILE = BellmanBindings/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../cargo/target/universal/release";
+				PRODUCT_BUNDLE_IDENTIFIER = "inc.matter-labs.BellmanBindings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BellmanBindings/BellmanBindings-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AE494EA2248E41200AB2972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DB897QKJA;
+				INFOPLIST_FILE = BellmanBindings/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../cargo/target/universal/release";
+				PRODUCT_BUNDLE_IDENTIFIER = "inc.matter-labs.BellmanBindings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/BellmanBindings/BellmanBindings-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AE494EC2248E41200AB2972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DB897QKJA;
+				INFOPLIST_FILE = BellmanBindingsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "inc.matter-labs.BellmanBindingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BellmanBindings.app/BellmanBindings";
+			};
+			name = Debug;
+		};
+		3AE494ED2248E41200AB2972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8DB897QKJA;
+				INFOPLIST_FILE = BellmanBindingsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "inc.matter-labs.BellmanBindingsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BellmanBindings.app/BellmanBindings";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AE494C62248E41000AB2972 /* Build configuration list for PBXProject "BellmanBindings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE494E62248E41200AB2972 /* Debug */,
+				3AE494E72248E41200AB2972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE494E82248E41200AB2972 /* Build configuration list for PBXNativeTarget "BellmanBindings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE494E92248E41200AB2972 /* Debug */,
+				3AE494EA2248E41200AB2972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE494EB2248E41200AB2972 /* Build configuration list for PBXNativeTarget "BellmanBindingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE494EC2248E41200AB2972 /* Debug */,
+				3AE494ED2248E41200AB2972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AE494C32248E41000AB2972 /* Project object */;
+}

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Boolean","This is a boolean value which may be either a constant or an interpretation of an `AllocatedBit`."]],"fn":[["field_into_allocated_bits_le",""],["field_into_boolean_vec_le",""],["u64_into_boolean_vec_le",""]],"struct":[["AllocatedBit","Represents a variable in the constraint system which is guaranteed to be either zero or one."]]});

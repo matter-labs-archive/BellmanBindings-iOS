@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TestConstraintSystem","Constraint system for testing purposes."]]});

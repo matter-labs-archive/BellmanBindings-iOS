@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["evaluate_at_x",""],["interpolate","Perform a Lagrange interpolation for a set of points It's O(n^2) operations, so use with caution"]]});

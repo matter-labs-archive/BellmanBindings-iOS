@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["UInt32","Represents an interpretation of 32 `Boolean` objects as an unsigned integer."]]});

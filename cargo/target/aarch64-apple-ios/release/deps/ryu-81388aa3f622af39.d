@@ -1,0 +1,15 @@
+/Users/anton/Developer/BellmanBindings-iOS/cargo/target/aarch64-apple-ios/release/deps/libryu-81388aa3f622af39.rlib: /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/lib.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/buffer/mod.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/common.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_full_table.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_intrinsics.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/digit_table.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/f2s.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mod.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/exponent.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mantissa.rs
+
+/Users/anton/Developer/BellmanBindings-iOS/cargo/target/aarch64-apple-ios/release/deps/ryu-81388aa3f622af39.d: /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/lib.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/buffer/mod.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/common.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_full_table.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_intrinsics.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/digit_table.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/f2s.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mod.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/exponent.rs /Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mantissa.rs
+
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/lib.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/buffer/mod.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/common.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_full_table.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/d2s_intrinsics.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/digit_table.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/f2s.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mod.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/exponent.rs:
+/Users/anton/.cargo/registry/src/github.com-1ecc6299db9ec823/ryu-0.2.7/src/pretty/mantissa.rs:

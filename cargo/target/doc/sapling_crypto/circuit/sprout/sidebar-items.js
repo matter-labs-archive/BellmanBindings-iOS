@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["TREE_DEPTH",""]],"struct":[["CommitmentRandomness",""],["JSInput",""],["JSOutput",""],["JoinSplit",""],["NoteValue",""],["PayingKey",""],["SpendingKey",""],["UniqueRandomness",""]]});
