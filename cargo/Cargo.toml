@@ -10,9 +10,10 @@ repository = "https://github.com/matter-labs/BellmanBindings-iOS"
 
 [lib]
 name = "bellman_bindings"
-crate-type = ["lib", "staticlib"]
+crate-type = ["lib", "staticlib", "cdylib"]
 path = "src/lib.rs"
 
 [dependencies]
 rand = "0.4"
-bellman = { git = 'https://github.com/matter-labs/bellman', tag = "0.2.0"}
+bellman = { git = 'https://github.com/matter-labs/bellman'}
+pairing = { git = 'https://github.com/matter-labs/pairing' }

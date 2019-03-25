@@ -10,8 +10,8 @@ use bellman::groth16::{
     VerifyingKey,
     prepare_verifying_key,
     verify_proof,
-    generate_parameters,
-    create_proof,
+    generate_random_parameters,
+    create_random_proof,
 };
 use bellman::pairing::Engine;
 use bellman::pairing::ff:: {
@@ -23,9 +23,10 @@ use bellman::{
     ConstraintSystem,
     SynthesisError
 };
+use bellman::pairing::bn256::Bn256;
+use bellman::pairing::bls12_381::Bls12;
 
 // Just for now
-use crate::helpers::engines::*;
 use crate::helpers::circuits::*;
 use crate::helpers::types_helpers::*;
 use crate::filesystem::get_verifying_key_from_file;
@@ -37,8 +38,7 @@ pub struct VerificationResult {
     error: *mut c_char,
 }
 
-#[no_mangle]
-pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> VerificationResult {
+fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize) -> VerificationResult {
     // VK 
     let filename = match ptr_to_string(file_with_vk) {
         Err(error) => {
@@ -49,11 +49,11 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         },
         Ok(result) => result,
     };
-    let verifying_key = match get_verifying_key_from_file::<DefaultEngine>(filename) {
+    let verifying_key = match get_verifying_key_from_file::<E>(filename) {
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: can't get file!".to_owned()).unwrap().into_raw()
+                error: CString::new("Error: can/'t get file!".to_owned()).unwrap().into_raw()
             }
         },
         Ok(result) => result,
@@ -61,32 +61,15 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
     let pvk = prepare_verifying_key(&verifying_key);
 
     // Proof
-    let g1 = Fr::one();
-    let g2 = Fr::one();
-    let alpha = Fr::from_str("48577").unwrap();
-    let beta = Fr::from_str("22580").unwrap();
-    let gamma = Fr::from_str("53332").unwrap();
-    let delta = Fr::from_str("5481").unwrap();
-    let tau = Fr::from_str("3673").unwrap();
+    let rng = &mut thread_rng();
 
-    let r = Fr::from_str("27134").unwrap();
-    let s = Fr::from_str("17146").unwrap();
-
-    let c = DefaultCircuit::<DefaultEngine> {
-        a: None,
-        b: None,
+    let circuit = DefaultCircuit {
+        a: Some(true),
+        b: Some(false),
         _marker: PhantomData
     };
-    let params = match generate_parameters(
-        c,
-        g1,
-        g2,
-        alpha,
-        beta,
-        gamma,
-        delta,
-        tau
-    ) {
+
+    let params = match generate_random_parameters(circuit, rng) {
         Err(error) => {
             return VerificationResult {
                 value: false,
@@ -95,16 +78,18 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         },
         Ok(result) => result,
     };
+
     let circuit = DefaultCircuit {
         a: Some(true),
         b: Some(false),
         _marker: PhantomData
     };
-    let proof = match create_proof(circuit, &params, r, s) {
+    
+    let proof = match create_random_proof(circuit, &params, rng) {
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: can't create proof!".to_owned()).unwrap().into_raw() 
+                error: CString::new("Error: can/'t create proof!".to_owned()).unwrap().into_raw() 
             }
         },
         Ok(result) => result,
@@ -121,8 +106,7 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         },
         Ok(result) => result,
     };
-    let inputs = Fr::from_str(inputs_str).unwrap();
-
+    let inputs = E::Fr::from_str(inputs_str).unwrap();
 
     // Verification
     let result = match verify_proof(
@@ -133,7 +117,7 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Can't verify proof!".to_owned()).unwrap().into_raw()  
+                error: CString::new("Can/'t verify proof!".to_owned()).unwrap().into_raw()  
             }
         },
         Ok(result) => result,
@@ -143,6 +127,21 @@ pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, input
         value: result,
         error: CString::new("".to_owned()).unwrap().into_raw()
     }
+}
+
+#[no_mangle]
+pub extern fn verify(file_with_vk: *const c_char, inputs_array: *const u8, inputs_array_size: usize, engine: u8) -> VerificationResult {
+    let result: VerificationResult = match engine {
+        0 => verify_with_certain_engine::<Bls12>(file_with_vk, inputs_array, inputs_array_size),
+        1 => verify_with_certain_engine::<Bn256>(file_with_vk, inputs_array, inputs_array_size),
+        _ => {
+            return VerificationResult {
+                value: false,
+                error: CString::new("Error: wrong engine!".to_owned()).unwrap().into_raw() 
+            }
+        },
+    };
+    result
 }
 
 #[no_mangle]

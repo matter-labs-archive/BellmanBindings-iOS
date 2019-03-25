@@ -5,6 +5,8 @@
 #![allow(unused_assignments)]
 
 extern crate bellman;
+extern crate pairing;
+extern crate rand;
 
 pub mod filesystem;
 pub mod verifier;

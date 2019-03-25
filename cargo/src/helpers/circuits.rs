@@ -10,7 +10,6 @@ use bellman::pairing::ff:: {
     Field,
     PrimeField,
 };
-use crate::helpers::engines::*;
 
 pub(crate) struct DefaultCircuit<E: Engine> {
     pub(crate) a: Option<bool>,
