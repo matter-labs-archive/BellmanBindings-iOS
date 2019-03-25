@@ -14,15 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let verifier = Verifier()
         do {
-            let result = try verifier.verifyProof(filename: "dfsdf", inputs: [0,0,1])
+            let result = try verifier.verifyProof(filename: "dfsdf", inputs: [0,0,1], engine: EngineTypes.Bn256)
             print(result)
         } catch let error {
             print(error.localizedDescription)
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
 
