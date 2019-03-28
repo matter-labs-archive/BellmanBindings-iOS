@@ -49,6 +49,10 @@ fn test_verify_with_certain_engine<E: Engine>(
     inputs_array_size: usize, 
     proof_vec: *const u8,
     proof_vec_size: usize) -> VerificationResult {
+    println!("Inputs array {:?}", inputs_array);
+    println!("Inputs array size {:?}", inputs_array_size);
+    println!("Proof vec {:?}", proof_vec);
+    println!("Proof vec size {:?}", proof_vec_size);
     // VK 
     let filename = match ptr_to_string(file_with_vk) {
         Err(error) => {
@@ -59,6 +63,7 @@ fn test_verify_with_certain_engine<E: Engine>(
         },
         Ok(result) => result,
     };
+    println!("Filename {}", filename);
     let verifying_key = match get_verifying_key_from_file::<E>(filename) {
         Err(error) => {
             return VerificationResult {
@@ -69,6 +74,8 @@ fn test_verify_with_certain_engine<E: Engine>(
         Ok(result) => result,
     };
     let pvk = prepare_verifying_key(&verifying_key);
+    
+    println!("PVK is ready");
 
     // Inputs
     let inputs_bytes = utf8_bytes_to_rust(inputs_array, inputs_array_size);
@@ -83,10 +90,14 @@ fn test_verify_with_certain_engine<E: Engine>(
     };
     let inputs = E::Fr::from_str(inputs_str).unwrap();
 
+    println!("Inputs are ready");
+
     // Proof
     let proof_vec_bytes = utf8_bytes_to_rust(proof_vec, proof_vec_size);
     let pv: Vec<u8> = proof_vec_bytes.iter().cloned().collect();
     let proof = Proof::read(&pv[..]).unwrap();
+
+    println!("Proof is ready");
 
     // Verification
     let result = match verify_proof(
@@ -102,6 +113,8 @@ fn test_verify_with_certain_engine<E: Engine>(
         },
         Ok(result) => result,
     };
+
+    println!("Result is {}", result);
 
     VerificationResult {
         value: result,
