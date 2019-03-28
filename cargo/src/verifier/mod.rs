@@ -49,7 +49,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: wrong file name!".to_owned()).unwrap().into_raw() 
+                error: CString::new(r#"Error: wrong file name!"#.to_owned()).unwrap().into_raw() 
             }
         },
         Ok(result) => result,
@@ -58,7 +58,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: can\'t get file!".to_owned()).unwrap().into_raw()
+                error: CString::new(r#"Error: can't get file!"#.to_owned()).unwrap().into_raw()
             }
         },
         Ok(result) => result,
@@ -78,7 +78,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: can\'t generate params!".to_owned()).unwrap().into_raw() 
+                error: CString::new(r#"Error: can't generate params!"#.to_owned()).unwrap().into_raw() 
             }
         },
         Ok(result) => result,
@@ -94,7 +94,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: can\'t create proof!".to_owned()).unwrap().into_raw() 
+                error: CString::new(r#"Error: can't create proof!"#.to_owned()).unwrap().into_raw() 
             }
         },
         Ok(result) => result,
@@ -106,7 +106,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Error: wrong input string!".to_owned()).unwrap().into_raw()  
+                error: CString::new(r#"Error: wrong input string!"#.to_owned()).unwrap().into_raw()  
             }
         },
         Ok(result) => result,
@@ -122,7 +122,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new("Can\'t verify proof!".to_owned()).unwrap().into_raw()  
+                error: CString::new(r#"Can't verify proof!"#.to_owned()).unwrap().into_raw()  
             }
         },
         Ok(result) => result,

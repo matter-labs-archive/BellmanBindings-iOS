@@ -9,9 +9,9 @@
 import Foundation
 
 public class VerifyError: Error {
-    var localizedDescription: String
+    var description: String
     init(description: String) {
-        localizedDescription = description
+        self.description = description
     }
 }
 

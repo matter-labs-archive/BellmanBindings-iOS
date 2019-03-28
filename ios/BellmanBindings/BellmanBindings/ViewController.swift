@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                                                       proofVec: proofVec)
             print(result)
         } catch let error {
-            print(error.localizedDescription)
+            print((error as! VerifyError).description)
         }
     }
 }
