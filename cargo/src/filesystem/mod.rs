@@ -3,6 +3,7 @@ use std::io::{BufReader, Read};
 use std::error::Error;
 use std::env;
 use std::io::prelude::*;
+use std::ffi::{CString, CStr};
 
 use bellman::groth16::VerifyingKey;
 use bellman::pairing::Engine;
