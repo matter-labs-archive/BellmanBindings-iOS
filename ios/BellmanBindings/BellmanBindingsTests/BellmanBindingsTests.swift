@@ -13,6 +13,7 @@ class BellmanBindingsTests: XCTestCase {
     
     func testVerification() {
         let verifier = Verifier()
+        let downloader = Downloader()
         do {
             let inputsString: String = "0x0ac9e6cd1b0607c7d618fc66501a362d7190ca18e9022f7e5a3b305495ecd246"
             let inputsBytes: [UInt8] = inputsString.hexa2Bytes
@@ -31,3 +32,5 @@ class BellmanBindingsTests: XCTestCase {
     }
 
 }
+
+

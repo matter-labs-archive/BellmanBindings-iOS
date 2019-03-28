@@ -9,7 +9,6 @@
 #ifndef BellmanBindings_Bridging_Header_h
 #define BellmanBindings_Bridging_Header_h
 
-#import "test.h"
 #import "verifier.h"
 
 #endif /* BellmanBindings_Bridging_Header_h */
