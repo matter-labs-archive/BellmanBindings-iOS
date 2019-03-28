@@ -3,16 +3,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef enum {
-  Bls12,
-  Bn256,
-} EngineType;
-
-typedef struct {
-  bool value;
-  char *error;
-} VerificationResult;
-
 VerificationResult test_verify(const char *file_with_vk,
                                const uint8_t *inputs_array,
                                uintptr_t inputs_array_size,

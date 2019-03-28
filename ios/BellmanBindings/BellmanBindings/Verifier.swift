@@ -21,8 +21,32 @@ public enum Engine: UInt8 {
 }
 
 public final class Verifier {
-    public func verifyProof(filename: String, inputs: [UInt8], engine: Engine) throws -> Bool {
-        let result = verify(filename, inputs, UInt(inputs.count), EngineType(rawValue: UInt32(engine.rawValue)))
+    public func verifyProof(filename: String,
+                            inputs: [UInt8],
+                            engine: Engine) throws -> Bool {
+        let result = verify(filename,
+                            inputs,
+                            UInt(inputs.count),
+                            EngineType(rawValue: UInt32(engine.rawValue)))
+        let verificationResult = result.value
+        let error = String(cString: result.error!)
+        free_memory(result)
+        if !error.isEmpty {
+            throw VerifyError(description: error)
+        }
+        return verificationResult
+    }
+    
+    public func testVerifyProof(filename: String,
+                                inputs: [UInt8],
+                                engine: Engine,
+                                proofVec: [UInt8]) throws -> Bool {
+        let result = test_verify(filename,
+                                 inputs,
+                                 UInt(inputs.count),
+                                 EngineType(rawValue: UInt32(engine.rawValue)),
+                                 proofVec,
+                                 UInt(proofVec.count))
         let verificationResult = result.value
         let error = String(cString: result.error!)
         free_memory(result)

@@ -16,6 +16,7 @@
 		3AE494F02248E42C00AB2972 /* libbellman_bindings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE494EF2248E42C00AB2972 /* libbellman_bindings.a */; };
 		3AE494F22248E44300AB2972 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE494F12248E44300AB2972 /* libresolv.tbd */; };
 		3AE494F62248E52B00AB2972 /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE494F52248E52B00AB2972 /* Verifier.swift */; };
+		3AE88FF0224CF39000D08E99 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE88FEF224CF39000D08E99 /* StringProtocolExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		3AE494F32248E47F00AB2972 /* verifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = verifier.h; path = ../../../cargo/src/verifier/verifier.h; sourceTree = "<group>"; };
 		3AE494F42248E4B400AB2972 /* BellmanBindings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BellmanBindings-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AE494F52248E52B00AB2972 /* Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifier.swift; sourceTree = "<group>"; };
+		3AE88FEE224CF1FA00D08E99 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = test.h; path = ../../../cargo/src/test/test.h; sourceTree = "<group>"; };
+		3AE88FEF224CF39000D08E99 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				3AE494F32248E47F00AB2972 /* verifier.h */,
+				3AE88FEE224CF1FA00D08E99 /* test.h */,
 				3AE494F42248E4B400AB2972 /* BellmanBindings-Bridging-Header.h */,
 				3AE494CE2248E41000AB2972 /* AppDelegate.swift */,
 				3AE494F52248E52B00AB2972 /* Verifier.swift */,
 				3AE494D02248E41000AB2972 /* ViewController.swift */,
+				3AE88FEF224CF39000D08E99 /* StringProtocolExtension.swift */,
 				3AE494D22248E41000AB2972 /* Main.storyboard */,
 				3AE494D52248E41100AB2972 /* Assets.xcassets */,
 				3AE494D72248E41100AB2972 /* LaunchScreen.storyboard */,
@@ -222,6 +227,7 @@
 			files = (
 				3AE494D12248E41000AB2972 /* ViewController.swift in Sources */,
 				3AE494F62248E52B00AB2972 /* Verifier.swift in Sources */,
+				3AE88FF0224CF39000D08E99 /* StringProtocolExtension.swift in Sources */,
 				3AE494CF2248E41000AB2972 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

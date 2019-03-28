@@ -10,5 +10,6 @@
 #define BellmanBindings_Bridging_Header_h
 
 #import "verifier.h"
+#import "test.h"
 
 #endif /* BellmanBindings_Bridging_Header_h */
