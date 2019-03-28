@@ -58,7 +58,7 @@ fn verify_with_certain_engine<E: Engine>(file_with_vk: *const c_char, inputs_arr
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new(r#"Error: can't get file!"#.to_owned()).unwrap().into_raw()
+                error: CString::new(r#"Error: can't get vk!"#.to_owned()).unwrap().into_raw()
             }
         },
         Ok(result) => result,
@@ -173,7 +173,7 @@ fn verify_with_precompiled_proof_with_certain_engine<E: Engine>(
         Err(error) => {
             return VerificationResult {
                 value: false,
-                error: CString::new(r#"Error: can't open file!"#.to_owned()).unwrap().into_raw()
+                error: CString::new(r#"Error: can't get vk!"#.to_owned()).unwrap().into_raw()
             }
         },
         Ok(result) => result,

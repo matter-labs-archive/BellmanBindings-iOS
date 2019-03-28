@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class VerifyError: Error {
+public class CustomError: Error {
     var description: String
     init(description: String) {
         self.description = description
@@ -32,7 +32,7 @@ public final class Verifier {
         let error = String(cString: result.error!)
         free_memory(result)
         if !error.isEmpty {
-            throw VerifyError(description: error)
+            throw CustomError(description: error)
         }
         return verificationResult
     }
@@ -51,7 +51,7 @@ public final class Verifier {
         let error = String(cString: result.error!)
         free_memory(result)
         if !error.isEmpty {
-            throw VerifyError(description: error)
+            throw CustomError(description: error)
         }
         return verificationResult
     }

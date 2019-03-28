@@ -16,7 +16,7 @@
 		3AE890B2224D230200D08E99 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE890B1224D230200D08E99 /* StringProtocolExtension.swift */; };
 		3AE890B5224D232500D08E99 /* Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE890B4224D232500D08E99 /* Verifier.swift */; };
 		3AE890BB224D257F00D08E99 /* verifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE890B8224D257F00D08E99 /* verifier.h */; };
-		3AE890FE224D31C900D08E99 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE890FC224D31A900D08E99 /* Downloader.swift */; };
+		3AE890FF224D8AAB00D08E99 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE890FC224D31A900D08E99 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +90,7 @@
 			children = (
 				3AE890B1224D230200D08E99 /* StringProtocolExtension.swift */,
 				3AE890B4224D232500D08E99 /* Verifier.swift */,
+				3AE890FC224D31A900D08E99 /* Downloader.swift */,
 				3AE890B8224D257F00D08E99 /* verifier.h */,
 				3AE890AC224D202900D08E99 /* BellmanBindings-Bridging-Header.h */,
 				3AE8906E224D1B9700D08E99 /* BellmanBindings.h */,
@@ -102,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				3AE89079224D1B9800D08E99 /* BellmanBindingsTests.swift */,
-				3AE890FC224D31A900D08E99 /* Downloader.swift */,
 				3AE8907B224D1B9800D08E99 /* Info.plist */,
 			);
 			path = BellmanBindingsTests;
@@ -230,6 +230,7 @@
 			files = (
 				3AE890B2224D230200D08E99 /* StringProtocolExtension.swift in Sources */,
 				3AE890B5224D232500D08E99 /* Verifier.swift in Sources */,
+				3AE890FF224D8AAB00D08E99 /* Downloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +238,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE890FE224D31C900D08E99 /* Downloader.swift in Sources */,
 				3AE8907A224D1B9800D08E99 /* BellmanBindingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
