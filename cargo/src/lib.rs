@@ -11,4 +11,3 @@ extern crate rand;
 pub mod filesystem;
 pub mod verifier;
 pub mod helpers;
-pub mod test;

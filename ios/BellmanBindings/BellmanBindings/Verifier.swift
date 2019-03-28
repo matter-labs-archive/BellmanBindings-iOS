@@ -2,7 +2,7 @@
 //  Verifier.swift
 //  BellmanBindings
 //
-//  Created by Anton on 25/03/2019.
+//  Created by Anton on 28/03/2019.
 //  Copyright © 2019 TheMatter. All rights reserved.
 //
 
@@ -37,16 +37,16 @@ public final class Verifier {
         return verificationResult
     }
     
-    public func testVerifyProof(filename: String,
-                                inputs: [UInt8],
-                                engine: Engine,
-                                proofVec: [UInt8]) throws -> Bool {
-        let result = test_verify(filename,
-                                 inputs,
-                                 UInt(inputs.count),
-                                 EngineType(rawValue: UInt32(engine.rawValue)),
-                                 proofVec,
-                                 UInt(proofVec.count))
+    public func verifyWithPrecompiledProof(filename: String,
+                                           inputs: [UInt8],
+                                           engine: Engine,
+                                           proofVec: [UInt8]) throws -> Bool {
+        let result = verify_with_precompiled_proof(filename,
+                                                   inputs,
+                                                   UInt(inputs.count),
+                                                   EngineType(rawValue: UInt32(engine.rawValue)),
+                                                   proofVec,
+                                                   UInt(proofVec.count))
         let verificationResult = result.value
         let error = String(cString: result.error!)
         free_memory(result)
